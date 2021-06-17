@@ -2,6 +2,8 @@ package br.com.loja.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+
 import br.com.loja.service.validation.ClienteInsert;
 
 @ClienteInsert
@@ -22,6 +24,9 @@ public class ClienteNewDTO implements Serializable{
 	private String complemento;
 	private String bairro;
 	private String cep;
+	
+	@NotEmpty(message="Preenchimento obrigatório")
+	private String senha;
 	
 	private Integer cidadeId;
 
@@ -127,6 +132,14 @@ public class ClienteNewDTO implements Serializable{
 
 	public void setTel3(String tel3) {
 		this.tel3 = tel3;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	
